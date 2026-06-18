@@ -1,0 +1,19 @@
+Speech Re-Synthesis POC — Reconstruction Model Training Summary
+==============================================================
+Model architecture    : BiLSTMReconstructor
+Parameters            : 3,719,248
+Input dim             : 768  (Wav2Vec2 hidden size)
+Output dim            : 80   (Mel bins)
+LSTM hidden           : 256 x 2 layers  (bidirectional)
+Loss function         : L1Loss (frame-level)
+Optimizer             : Adam  lr=0.001
+Batch size            : 4
+Training samples      : 10
+Epochs                : 30
+
+Initial avg loss      : 6.284288
+Final avg loss        : 2.662081
+Total improvement     : 3.622207  (57.6%)
+
+Checkpoint            : models/reconstruction_model.pt
+Training log CSV      : results/reconstruction_training_log.csv

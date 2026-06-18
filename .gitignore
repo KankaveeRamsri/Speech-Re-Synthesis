@@ -45,11 +45,10 @@ data/metadata_enhanced_poc.csv
 data/features_wav2vec2/
 data/metadata_features.csv
 
-# ── Model / checkpoint / cache folders ──────────────────────────────────────────
-models/
-checkpoints/
-*.pt
-*.pth
+# ── Model weights and checkpoints ───────────────────────────────────────────────
+models/*.pt
+models/*.pth
+models/checkpoints/
 *.ckpt
 .cache/
 wandb/
