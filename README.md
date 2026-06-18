@@ -28,6 +28,8 @@ Demonstrate a full speech re-synthesis evaluation loop:
 | 4.6 | `run_multilevel_stt_eval.py` | WER across all 4 levels |
 | 5 | `simple_enhancement.py` | Signal-processing enhancement (no training) |
 | 5.5 | `run_enhanced_stt_eval.py` | WER: distorted vs enhanced |
+| 6 | `extract_wav2vec2_features.py` | Extract Wav2Vec2 hidden states + clean Mel targets |
+| 6.5 | `check_features.py` | Validate .npz features (shape, NaN/Inf, alignment) |
 
 ---
 
@@ -58,7 +60,9 @@ Speech-Re-Synthesis/
 │   ├── create_multilevel_distortion.py  # Phase 4.5
 │   ├── run_multilevel_stt_eval.py  # Phase 4.6
 │   ├── simple_enhancement.py       # Phase 5
-│   └── run_enhanced_stt_eval.py    # Phase 5.5
+│   ├── run_enhanced_stt_eval.py    # Phase 5.5
+│   ├── extract_wav2vec2_features.py  # Phase 6
+│   └── check_features.py           # Phase 6.5
 ├── data/                           # Dataset and generated audio (mostly gitignored)
 │   └── LJSpeech-1.1 3/            # ← NOT included; download separately (see below)
 ├── results/                        # CSV and TXT evaluation reports (committed)
@@ -69,7 +73,9 @@ Speech-Re-Synthesis/
 │   ├── multilevel_stt_results.csv
 │   ├── multilevel_stt_summary.txt
 │   ├── enhanced_stt_results.csv
-│   └── enhanced_stt_summary.txt
+│   ├── enhanced_stt_summary.txt
+│   ├── feature_check.csv
+│   └── feature_summary.txt
 ├── requirements.txt
 └── README.md
 ```
@@ -143,6 +149,13 @@ python scripts/simple_enhancement.py
 # Phase 5.5 — evaluate enhanced audio
 python scripts/run_enhanced_stt_eval.py
 python scripts/run_enhanced_stt_eval.py --n 50
+
+# Phase 6 — extract Wav2Vec2 features + clean Mel targets (10 samples default)
+python scripts/extract_wav2vec2_features.py
+python scripts/extract_wav2vec2_features.py --n 50   # all samples
+
+# Phase 6.5 — validate extracted features
+python scripts/check_features.py
 ```
 
 ---
@@ -178,11 +191,31 @@ Three signal-processing stages applied to distorted audio — no model training:
 | `openai-whisper` | ASR transcription |
 | `jiwer` | Word Error Rate calculation |
 | `noisereduce` | Spectral noise reduction |
+| `torch` | Tensor computation for Wav2Vec2 inference |
+| `transformers` | Wav2Vec2Model + Processor (Hugging Face) |
+| `pandas` | Data manipulation |
+
+---
+
+## Feature Format (Phase 6)
+
+Each `.npz` file in `data/features_wav2vec2/` contains:
+
+| Key | Shape | Description |
+|-----|-------|-------------|
+| `wav2vec2_features` | `(T_w2v, 768)` | Hidden states from distorted_medium audio |
+| `clean_mel` | `(80, T_mel)` | Log-Mel spectrogram from clean audio |
+| `id` | scalar | Sample ID string |
+| `text` | scalar | Normalised transcript |
+| `clean_path` | scalar | Relative path to clean wav |
+| `distorted_medium_path` | scalar | Relative path to distorted wav |
+
+> `T_w2v > T_mel` by ~22 frames on average because distorted audio is 7% longer (speed ×1.07). Temporal alignment is a Phase 7 concern.
 
 ---
 
 ## Next Steps (not yet implemented)
 
-- Phase 6: Model-based enhancement using Wav2Vec2 / HiFi-GAN
-- Fine-tuning on clean↔distorted pairs
+- Phase 7: Train a Wav2Vec2 → Mel-spectrogram mapping network
+- Phase 8: HiFi-GAN vocoder to convert predicted Mel back to waveform
 - Objective metrics: PESQ, STOI, SI-SNR
