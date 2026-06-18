@@ -1,0 +1,15 @@
+# Phase 1 — prepare clean audio subset
+# Only stdlib (csv, shutil, pathlib, sys) is used; no third-party packages required yet.
+
+# Phase 2 — distortion simulation
+librosa>=0.10.0
+soundfile>=0.12.0
+scipy>=1.11.0
+numpy>=1.24.0
+
+# Phase 4 — STT evaluation
+openai-whisper>=20231117
+jiwer>=3.0.0
+
+# Phase 5 — simple enhancement baseline
+noisereduce>=3.0.0

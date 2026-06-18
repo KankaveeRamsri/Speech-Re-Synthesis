@@ -1,0 +1,12 @@
+Speech Re-Synthesis POC — Dataset Check Summary
+==================================================
+Total rows            : 50
+Valid clean files     : 50 / 50
+Valid distorted files : 50 / 50
+Missing files         : 0
+Avg clean duration    : 6.6722 s
+Avg distorted duration: 7.1393 s
+Total clean audio     : 333.61 s (5.56 min)
+Total distorted audio : 356.97 s (5.95 min)
+
+Report CSV            : /Users/balast/Desktop/Speech-Re-Synthesis/results/dataset_check.csv

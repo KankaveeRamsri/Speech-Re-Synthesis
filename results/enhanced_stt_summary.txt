@@ -1,0 +1,16 @@
+Speech Re-Synthesis POC — Enhanced STT Evaluation Summary
+==========================================================
+Whisper model              : base
+Samples evaluated          : 10
+
+Medium level:
+  distorted_medium WER : 0.1019 ( 10.2%)  █████
+  enhanced_medium  WER : 0.1013 ( 10.1%)  █████
+  Enhancement improved medium? : YES  (ΔWER -0.1%)
+
+Severe level:
+  distorted_severe WER : 0.9208 ( 92.1%)  ██████████████████████████████████████████████
+  enhanced_severe  WER : 0.8866 ( 88.7%)  ████████████████████████████████████████████
+  Enhancement improved severe? : YES  (ΔWER -3.4%)
+
+Results CSV : /Users/balast/Desktop/Speech-Re-Synthesis/results/enhanced_stt_results.csv

@@ -1,0 +1,14 @@
+Speech Re-Synthesis POC — Multi-Level STT Evaluation Summary
+==========================================================
+Whisper model              : base
+Samples evaluated          : 10
+
+Average WER per level:
+  clean   0.0702 (  7.0%)  ████
+  mild    0.0631 (  6.3%)  ███
+  medium  0.1019 ( 10.2%)  █████
+  severe  0.8754 ( 87.5%)  ████████████████████████████████████████████
+
+WER increases with distortion? : NOT STRICTLY
+
+Results CSV : /Users/balast/Desktop/Speech-Re-Synthesis/results/multilevel_stt_results.csv

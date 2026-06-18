@@ -1,0 +1,57 @@
+# ── Python ─────────────────────────────────────────────────────────────────────
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Environment ─────────────────────────────────────────────────────────────────
+.env
+.env.*
+
+# ── macOS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Editor / IDE ─────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── LJ Speech raw dataset (not redistributable) ─────────────────────────────────
+data/LJSpeech-1.1 3/
+
+# ── Generated audio outputs (large binary files) ────────────────────────────────
+data/clean/
+data/distorted/
+data/distorted_mild/
+data/distorted_medium/
+data/distorted_severe/
+data/enhanced_medium/
+data/enhanced_severe/
+
+# ── Generated CSV metadata (reproducible by running scripts) ────────────────────
+data/metadata_clean.csv
+data/metadata_poc.csv
+data/metadata_multilevel_poc.csv
+data/metadata_enhanced_poc.csv
+
+# ── Model / checkpoint / cache folders ──────────────────────────────────────────
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+.cache/
+wandb/
+
+# ── Whisper model cache (auto-downloaded at runtime) ────────────────────────────
+~/.cache/whisper/
+
+# ── Claude Code internal ─────────────────────────────────────────────────────────
+.claude/

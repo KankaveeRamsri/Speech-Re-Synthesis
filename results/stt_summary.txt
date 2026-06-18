@@ -1,0 +1,9 @@
+Speech Re-Synthesis POC — STT Evaluation Summary
+==================================================
+Whisper model           : base
+Samples evaluated       : 10
+Avg clean WER           : 0.0702  (7.0%)
+Avg distorted WER       : 0.0894  (8.9%)
+Distorted harder?       : YES
+
+Results CSV             : /Users/balast/Desktop/Speech-Re-Synthesis/results/stt_results.csv
