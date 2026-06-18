@@ -41,6 +41,10 @@ data/metadata_poc.csv
 data/metadata_multilevel_poc.csv
 data/metadata_enhanced_poc.csv
 
+# ── Phase 6: extracted features (large numpy arrays) ────────────────────────────
+data/features_wav2vec2/
+data/metadata_features.csv
+
 # ── Model / checkpoint / cache folders ──────────────────────────────────────────
 models/
 checkpoints/

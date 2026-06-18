@@ -13,3 +13,8 @@ jiwer>=3.0.0
 
 # Phase 5 — simple enhancement baseline
 noisereduce>=3.0.0
+
+# Phase 6 — Wav2Vec2 feature extraction
+torch>=2.0.0
+transformers>=4.30.0
+pandas>=2.0.0
