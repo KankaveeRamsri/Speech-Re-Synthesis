@@ -1,0 +1,14 @@
+Speech Re-Synthesis POC — Feature Check Summary
+====================================================
+Total feature files       : 10
+Valid files               : 10
+Invalid files             : 0
+Avg wav2vec2 time steps   : 356.0
+Avg mel time steps        : 333.9
+Avg time-step difference  : +22.1  (w2v − mel)
+Train-ready?              : YES
+
+Note: Δt is expected: distorted audio is ~7% longer (speed ×1.07) so
+  wav2vec2 frames > mel frames. Alignment must be handled in Phase 7.
+
+Report CSV                : /Users/balast/Desktop/Speech-Re-Synthesis/results/feature_check.csv

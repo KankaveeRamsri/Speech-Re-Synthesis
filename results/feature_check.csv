@@ -1,0 +1,11 @@
+id,feature_path,status,w2v_shape,mel_shape,w2v_time_steps,mel_time_steps,timestep_diff,w2v_dim_ok,mel_bins_ok,w2v_nan,w2v_inf,mel_nan,mel_inf,error
+clean_0001,data/features_wav2vec2/clean_0001.npz,OK,516x768,80x483,516,483,33,True,True,False,False,False,False,
+clean_0002,data/features_wav2vec2/clean_0002.npz,OK,101x768,80x95,101,95,6,True,True,False,False,False,False,
+clean_0003,data/features_wav2vec2/clean_0003.npz,OK,516x768,80x484,516,484,32,True,True,False,False,False,False,
+clean_0004,data/features_wav2vec2/clean_0004.npz,OK,274x768,80x257,274,257,17,True,True,False,False,False,False,
+clean_0005,data/features_wav2vec2/clean_0005.npz,OK,433x768,80x406,433,406,27,True,True,False,False,False,False,
+clean_0006,data/features_wav2vec2/clean_0006.npz,OK,303x768,80x285,303,285,18,True,True,False,False,False,False,
+clean_0007,data/features_wav2vec2/clean_0007.npz,OK,448x768,80x420,448,420,28,True,True,False,False,False,False,
+clean_0008,data/features_wav2vec2/clean_0008.npz,OK,95x768,80x90,95,90,5,True,True,False,False,False,False,
+clean_0009,data/features_wav2vec2/clean_0009.npz,OK,403x768,80x378,403,378,25,True,True,False,False,False,False,
+clean_0010,data/features_wav2vec2/clean_0010.npz,OK,471x768,80x441,471,441,30,True,True,False,False,False,False,
