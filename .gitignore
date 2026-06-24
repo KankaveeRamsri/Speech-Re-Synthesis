@@ -45,6 +45,10 @@ data/metadata_enhanced_poc.csv
 data/features_wav2vec2/
 data/metadata_features.csv
 
+# ── Phase 9: reconstructed audio (Griffin-Lim output) ───────────────────────────
+data/reconstructed_audio/
+data/metadata_reconstructed_audio.csv
+
 # ── Phase 8: predicted mel outputs ─────────────────────────────────────────────
 data/predicted_mel/
 data/metadata_predicted_mel.csv
