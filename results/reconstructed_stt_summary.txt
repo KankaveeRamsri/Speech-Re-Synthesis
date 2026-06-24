@@ -1,0 +1,23 @@
+Speech Re-Synthesis POC — Reconstructed Audio STT Evaluation (Phase 10)
+======================================================================
+Whisper model         : base
+Samples evaluated     : 10
+
+── WER Results ────────────────────────────────────────────────────────
+  reconstructed  WER  : 1.0000 (100.0%)  ████████████████████████████████████████
+  distorted_medium WER: 0.1019 ( 10.2%)  ████  [Phase 5.5]
+  enhanced_medium  WER: 0.1013 ( 10.1%)  ████  [Phase 5.5]
+
+── Comparison vs Phase 5.5 ────────────────────────────────────────────
+  Δ recon vs distorted_medium : +0.8981 (+89.8%)
+  Δ recon vs enhanced_medium  : +0.8987 (+89.9%)
+
+── Usability Assessment ───────────────────────────────────────────────
+  Threshold             : ≤ 30% WER to be considered usable
+  Reconstructed audio   : NOT YET usable for STT
+
+  Note: Griffin-Lim introduces phase artifacts that degrade Whisper
+  accuracy.  Expected next step: replace with HiFi-GAN vocoder
+  (Phase 11) and re-evaluate.
+
+Results CSV  : results/reconstructed_stt_results.csv
